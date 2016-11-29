@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Cinderella Math Worksheet</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+	<div class="container">
+		<h2>Cinderella Math Worksheet</h2>
+		<canvas id="myCanvas" width="960" height="998"
+			style="border: 10px solid #d3d3d3;">
+Your browser does not support the HTML5 canvas tag.</canvas>
+	</div>
+	<script type="text/javascript">
+		window.onload = function() {
+			var canvas = document.getElementById("myCanvas");
+			var context = canvas.getContext("2d");
+			var imageObj = new Image();
+			imageObj.onload = function() {
+				context.drawImage(imageObj, 0, 0, 1000, 1008);
+				context.font = "30pt Calibri";
+				//Name
+				context.fillText("Name:", 20, 60);
+				context.fillText("____________", 140, 60);
+				//Problem 1
+				context.fillText("___", 90, 600);
+				context.fillText("___", 90, 660);
+				//Problem 2
+				context.fillText("___", 220, 870);
+				context.fillText("___", 220, 930);
+				//Problem 3
+				context.fillText("___", 460, 600);
+				context.fillText("___", 460, 660);
+				//Problem 4
+				context.fillText("___", 430, 870);
+				context.fillText("___", 430, 930);
+				//Problem 5
+				context.fillText("___", 770, 800);
+				context.fillText("___", 770, 860);
+
+				context.font = "13pt Calibri";
+				context.fillText("Problem 1", 90, 540);
+				context.fillText("appears here", 80, 580);
+				context.fillText("Problem 2", 220, 810);
+				context.fillText("appears here", 210, 850);
+				context.fillText("Problem 3", 460, 540);
+				context.fillText("appears here", 450, 580);
+				context.fillText("Problem 4", 430, 810);
+				context.fillText("appears here", 420, 850);
+				context.fillText("Problem 5", 770, 740);
+				context.fillText("appears here", 760, 780);
+			};
+			imageObj.src = "pretty_cinderella.gif";
+		};
+
+		function draw() {
+			var canvas = document.getElementById("myCanvas");
+			var context = canvas.getContext("2d");
+			var imageObj = new Image();
+			imageObj.onload = function() {
+				//width="1000" height="1008"
+				context.drawImage(imageObj, 0, 0, 1000, 1008);
+				context.font = "30pt Calibri";
+				context.fillText("Name:", 20, 60);
+				context.fillText("____________", 140, 60);
+				//Problem 1
+				context.textAlign = "start";
+				context.fillText("____", 90, 600);
+				context.fillText("____", 90, 660);
+				context.fillText(document.getElementById("signId1").value, 70,
+						555);
+				context.textAlign = "right";
+				context.fillText(
+						document.getElementById("problem1number1Id").value,
+						160, 540);
+				context.fillText(
+						document.getElementById("problem1number2Id").value,
+						160, 580);
+
+				//Problem 2
+				context.textAlign = "start";
+				context.fillText("____", 220, 870);
+				context.fillText("____", 220, 930);
+				context.fillText(document.getElementById("signId2").value, 190,
+						825);
+				context.textAlign = "right";
+				context.fillText(
+						document.getElementById("problem2number1Id").value,
+						290, 810);
+				context.fillText(
+						document.getElementById("problem2number2Id").value,
+						290, 850);
+
+				//Problem 3
+				context.textAlign = "start";
+				context.fillText("____", 460, 600);
+				context.fillText("____", 460, 660);
+				context.fillText(document.getElementById("signId3").value, 430,
+						555);
+				context.textAlign = "right";
+				context.fillText(
+						document.getElementById("problem3number1Id").value,
+						530, 540);
+				context.fillText(
+						document.getElementById("problem3number2Id").value,
+						530, 580);
+
+				//Problem 4
+				context.textAlign = "start";
+				context.fillText("____", 430, 870);
+				context.fillText("____", 430, 930);
+				context.fillText(document.getElementById("signId4").value, 400,
+						825);
+				context.textAlign = "right";
+				context.fillText(
+						document.getElementById("problem4number1Id").value,
+						500, 810);
+				context.fillText(
+						document.getElementById("problem4number2Id").value,
+						500, 850);
+
+				//Problem 5
+				context.textAlign = "start";
+				context.fillText("____", 770, 800);
+				context.fillText("____", 770, 860);
+				context.fillText(document.getElementById("signId5").value, 740,
+						755);
+				context.textAlign = "right";
+				context.fillText(
+						document.getElementById("problem5number1Id").value,
+						840, 740);
+				context.fillText(
+						document.getElementById("problem5number2Id").value,
+						840, 780);
+
+			};
+			imageObj.src = "pretty_cinderella.gif";
+		}
+	</script>
+	<!--  
+	<div class="form-horizontal">
+		<h4>Problem 1</h4>
+
+		<div class="form-group">
+			<label class="control-label col-sm-2" for="problem1number1Id">1st
+				Number:</label>
+
+			<div class="col-sm-10">
+				<input type="number" class="form-control" id="problem1number1Id"
+					placeholder="Enter 1st number">
+			</div>
+		</div>
+
+		<div class="form-group">
+
+			<label class="control-label col-sm-2" for="problem1number2Id">2nd
+				Number:</label>
+			<div class="col-sm-10">
+				<input type="number" class="form-control" id="problem1number2Id"
+					placeholder="Enter 2nd number">
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="signId1">Arithmetic Operation:</label> <select
+				class="form-control" id="signId1">
+				<option>+</option>
+				<option>-</option>
+				<option>x</option>
+				<option>�</option>
+			</select>
+		</div>
+		-->
+	<div class="form-inline">
+		<h4>Problem 1</h4>
+
+		<div class="form-group">
+			<label for="problem1number1Id">1st Number:</label> <input
+				type="number" class="form-control" id="problem1number1Id"
+				placeholder="Enter 1st number">
+		</div>
+		<div class="form-group">
+			<label for="problem1number2Id">2nd Number:</label> <input
+				type="number" class="form-control" id="problem1number2Id"
+				placeholder="Enter 2nd number">
+		</div>
+		<div class="form-group">
+			<label for="signId1">Arithmetic Operation:</label> <select
+				class="form-control" id="signId1">
+				<option>+</option>
+				<option>-</option>
+				<option>x</option>
+				<option>÷</option>
+			</select>
+		</div>
+		<h4>Problem 2</h4>
+		<div class="form-group">
+			<label for="problem2number1Id">1st Number:</label> <input
+				type="number" class="form-control" id="problem2number1Id"
+				placeholder="Enter 1st number">
+		</div>
+		<div class="form-group">
+			<label for="problem2number2Id">2nd Number:</label> <input
+				type="number" class="form-control" id="problem2number2Id"
+				placeholder="Enter 2nd number">
+		</div>
+		<div class="form-group">
+			<label for="signId2">Arithmetic Operation:</label> <select
+				class="form-control" id="signId2">
+				<option>+</option>
+				<option>-</option>
+				<option>x</option>
+				<option>÷</option>
+			</select>
+		</div>
+		<h4>Problem 3</h4>
+		<div class="form-group">
+			<label for="problem3number1Id">1st Number:</label> <input
+				type="number" class="form-control" id="problem3number1Id"
+				placeholder="Enter 1st number">
+		</div>
+		<div class="form-group">
+			<label for="problem3number2Id">2nd Number:</label> <input
+				type="number" class="form-control" id="problem3number2Id"
+				placeholder="Enter 2nd number">
+		</div>
+		<div class="form-group">
+			<label for="signId3">Arithmetic Operation:</label> <select
+				class="form-control" id="signId3">
+				<option>+</option>
+				<option>-</option>
+				<option>x</option>
+				<option>÷</option>
+			</select>
+		</div>
+		<h4>Problem 4</h4>
+		<div class="form-group">
+			<label for="problem4number1Id">1st Number:</label> <input
+				type="number" class="form-control" id="problem4number1Id"
+				placeholder="Enter 1st number">
+		</div>
+		<div class="form-group">
+			<label for="problem4number2Id">2nd Number:</label> <input
+				type="number" class="form-control" id="problem4number2Id"
+				placeholder="Enter 2nd number">
+		</div>
+		<div class="form-group">
+			<label for="signId4">Arithmetic Operation:</label> <select
+				class="form-control" id="signId4">
+				<option>+</option>
+				<option>-</option>
+				<option>x</option>
+				<option>÷</option>
+			</select>
+		</div>
+		<h4>Problem 5</h4>
+		<div class="form-group">
+			<label for="problem5number1Id">1st Number:</label> <input
+				type="number" class="form-control" id="problem5number1Id"
+				placeholder="Enter 1st number">
+		</div>
+		<div class="form-group">
+			<label for="problem5number2Id">2nd Number:</label> <input
+				type="number" class="form-control" id="problem5number2Id"
+				placeholder="Enter 2nd number">
+		</div>
+		<div class="form-group">
+			<label for="signId5">Arithmetic Operation:</label> <select
+				class="form-control" id="signId5">
+				<option>+</option>
+				<option>-</option>
+				<option>x</option>
+				<option>÷</option>
+			</select>
+		</div>
+		<button type="submit" class="btn btn-default" onclick="draw()">Submit</button>
+	</div>
+</body>
+</html>
